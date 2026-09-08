@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+
+
+}
+body{
+  background:linear-gradient(to left, black, grey);
+  color: white;
+}
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #df6161;
+  gap: 55px;
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+}
+nav a {
+  color: black;
+  text-decoration: none;
+}
+.contact{
+  text-align: center;
+  margin: 20px;
+  padding: 3px;
+  gap: 20px;
+
+}
+.contact h3{
+  margin: 30px 5px ;
+}
+Home{
+  text-align: center;
+  background-color: none;
+}
