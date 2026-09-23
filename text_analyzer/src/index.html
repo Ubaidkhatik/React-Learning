@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Nova — Build Something Amazing</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0f19;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      background: rgba(11, 15, 25, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #7c5cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #c7cad4;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-btn {
+      background: #7c5cff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background: #6847f5;
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding: 160px 8% 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: #7c5cff;
+      filter: blur(180px);
+      opacity: 0.25;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(124, 92, 255, 0.5);
+      border-radius: 50px;
+      color: #b8aaff;
+      background: rgba(124, 92, 255, 0.08);
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 85px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: #7c5cff;
+    }
+
+    .hero p {
+      color: #aeb3c2;
+      font-size: 19px;
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 26px;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .primary-btn {
+      background: #7c5cff;
+    }
+
+    .primary-btn:hover {
+      background: #6847f5;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(124,92,255,0.3);
+    }
+
+    .secondary-btn {
+      border: 1px solid #303646;
+      color: #d5d8e1;
+    }
+
+    .secondary-btn:hover {
+      background: #151a27;
+      transform: translateY(-3px);
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 100px 8%;
+      background: #0e1320;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #969cab;
+    }
+
+    .feature-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      padding: 30px;
+      background: #151a27;
+      border: 1px solid #252b3b;
+      border-radius: 16px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #7c5cff;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(124, 92, 255, 0.12);
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #969cab;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 120px 8%;
+      text-align: center;
+    }
+
+    .cta-box {
+      max-width: 900px;
+      margin: auto;
+      padding: 70px 30px;
+      border-radius: 25px;
+      background: linear-gradient(
+        135deg,
+        rgba(124,92,255,0.2),
+        rgba(53,211,153,0.08)
+      );
+      border: 1px solid #292f40;
+    }
+
+    .cta h2 {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #aeb3c2;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #202533;
+      text-align: center;
+      color: #777e90;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+
+      .navbar {
+        padding: 18px 5%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .features {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2,
+      .cta h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#" class="logo">NOVA</a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+
+    <a href="#start" class="nav-btn">Get Started</a>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        ✨ The future starts here
+      </div>
+
+      <h1>
+        Build your ideas<br>
+        <span>faster than ever.</span>
+      </h1>
+
+      <p>
+        Nova gives you everything you need to turn your ideas
+        into powerful digital experiences. Simple, fast and beautiful.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#start" class="btn primary-btn">
+          Get Started →
+        </a>
+
+        <a href="#features" class="btn secondary-btn">
+          Explore Features
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+
+    <div class="section-title">
+      <h2>Everything you need</h2>
+      <p>
+        Powerful tools designed to help you create better products
+        without unnecessary complexity.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Lightning Fast</h3>
+        <p>
+          Optimized performance ensures your website loads quickly
+          and provides a smooth experience.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Beautiful Design</h3>
+        <p>
+          Create modern interfaces that look great on every screen
+          and device.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔒</div>
+        <h3>Secure</h3>
+        <p>
+          Built with security and reliability in mind, so you can
+          focus on building your product.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta" id="start">
+
+    <div class="cta-box">
+
+      <h2>Ready to build?</h2>
+
+      <p>
+        Start creating something amazing today.
+      </p>
+
+      <a href="#" class="btn primary-btn">
+        Start Building →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Nova. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
