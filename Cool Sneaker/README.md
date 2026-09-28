@@ -1,16 +1,48 @@
-# React + Vite
+## Cool Sneakers 👟
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A simple React + Vite product page built while practicing React concepts.
 
-Currently, two official plugins are available:
+## 🛍️ Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Cool Sneakers is a simple sneaker product page that displays product information and basic user interaction.
 
-## React Compiler
+The page includes a sneaker image, price, description, quantity input, Add to Cart button, and product review.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the Oxlint configuration
+- 👟 Sneaker product display
+- 🖼️ Product image
+- 💰 Product price
+- 📝 Product description
+- 🔢 Quantity selection
+- 🛒 Add to Cart button
+- ⭐ Product review
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🛠️ Technologies Used
+
+- React
+- Vite
+- JavaScript
+- HTML
+- CSS
+
+## 🎯 Purpose
+
+This project was created as part of my React learning journey to practice building components, displaying data, handling user input, and creating interactive UI elements.
+
+## 🚀 Future Improvements
+
+- Add multiple products
+- Implement a functional shopping cart
+- Add quantity increase/decrease buttons
+- Add dynamic product reviews
+- Add responsive design
+- Add more e-commerce features
+
+## 📸 Preview
+
+The project displays a sneaker product page with product information, quantity selection, cart interaction, and a customer review.
+
+## 📚 Learning
+
+This project is part of my ongoing React practice and will be improved as I learn new React concepts.
